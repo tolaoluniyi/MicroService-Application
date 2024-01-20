@@ -23,14 +23,14 @@ pipeline {
                 }
             }
         }
-            stage($SERVICE_1) {
+            stage(${SERVICE_1}) {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir('/var/lib/jenkins/workspace/10-Tier/src/$SERVICE_1/') {
-                        sh "docker build -t tkibnyusuf/$SERVICE_1:latest ."
-                        sh "docker push tkibnyusuf/$SERVICE_1:latest"
-                        sh "docker rmi tkibnyusuf/$SERVICE_1:latest"
+                    dir('/var/lib/jenkins/workspace/10-Tier/src/${SERVICE_1}/') {
+                        sh "docker build -t tkibnyusuf/${SERVICE_1}:latest ."
+                        sh "docker push tkibnyusuf/${SERVICE_1}:latest"
+                        sh "docker rmi tkibnyusuf/${SERVICE_1}:latest"
                     }
                 }
             }
