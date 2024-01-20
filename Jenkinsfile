@@ -2,17 +2,17 @@ pipeline {
     agent any
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
-        SERVICE_1 = 'adservice'
-        SERVICE_2 = 'cartservice'
-        SERVICE_3 = 'checkoutservice'
-        SERVICE_4 = 'currencyservice'
-        SERVICE_5 = 'emailservice'
-        SERVICE_6 = 'frontend'
-        SERVICE_7 = 'loadgenerator'
-        SERVICE_8 = 'paymentservice'
-        SERVICE_9 = 'productcatalogservice'
-        SERVICE_10 = 'recommendationservice'
-        SERVICE_11 = 'shippingservice'
+        SERVICE_1='adservice'
+        SERVICE_2='cartservice'
+        SERVICE_3='checkoutservice'
+        SERVICE_4='currencyservice'
+        SERVICE_5='emailservice'
+        SERVICE_6='frontend'
+        SERVICE_7='loadgenerator'
+        SERVICE_8='paymentservice'
+        SERVICE_9='productcatalogservice'
+        SERVICE_10='recommendationservice'
+        SERVICE_11='shippingservice'
    }
 
     stages {
