@@ -132,8 +132,6 @@ pipeline {
                 }
             }
         }
-
-            }
             stage($SERVICE_9) {
               steps {
                script {
