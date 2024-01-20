@@ -4,11 +4,6 @@ pipeline {
         SCANNER_HOME = tool 'sonar-scanner'
     }
     stages {
-        stage('git checkout') {
-            steps {
-                git branch: 'latest', url: 'https://github.com/mudit097/10-Tier-MicroService-Appliction.git'
-            }
-        }
         stage('SonarQube') {
             steps {
                 withSonarQubeEnv('sonar') {
