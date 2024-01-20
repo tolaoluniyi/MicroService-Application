@@ -23,7 +23,7 @@ pipeline {
                 }
             }
         }
-            stage(${SERVICE_1}) {
+            stage('adservice') {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -36,7 +36,7 @@ pipeline {
             }
         }
             }
-            stage($SERVICE_2) {
+            stage('cartservice') {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -49,7 +49,7 @@ pipeline {
             }
         }
        }
-            stage($SERVICE_3) {
+            stage('checkoutservice') {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -62,7 +62,7 @@ pipeline {
             }
         }
             }
-            stage($SERVICE_4) {
+            stage('currencyservice') {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -76,7 +76,7 @@ pipeline {
         }
 
             }
-            stage($SERVICE_5) {
+            stage('emailservice') {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -89,7 +89,7 @@ pipeline {
             }
         }
             }
-            stage($SERVICE_6) {
+            stage('frontend') {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -102,7 +102,7 @@ pipeline {
             }
         }
             }
-            stage($SERVICE_7) {
+            stage('loadgenerator') {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -115,7 +115,7 @@ pipeline {
             }
         }
             }
-             stage($SERVICE_8) {
+             stage('paymentservice') {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -128,7 +128,7 @@ pipeline {
             }
         }
              }
-             stage($SERVICE_9) {
+             stage('productcatalogservice') {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -141,7 +141,7 @@ pipeline {
             }
         }
              }
-             stage($SERVICE_10) {
+             stage('recommendationservice') {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -154,7 +154,7 @@ pipeline {
             }
         }
              }
-             stage($SERVICE_11) {
+             stage('shippingservice') {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
