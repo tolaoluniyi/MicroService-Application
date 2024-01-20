@@ -27,7 +27,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/$SERVICE_1/") {
+                    dir('/var/lib/jenkins/workspace/10-Tier/src/$SERVICE_1/') {
                         sh "docker build -t tkibnyusuf/$SERVICE_1:latest ."
                         sh "docker push tkibnyusuf/$SERVICE_1:latest"
                         sh "docker rmi tkibnyusuf/$SERVICE_1:latest"
@@ -40,7 +40,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/$SERVICE_2/src") {
+                    dir("/var/lib/jenkins/workspace/10-Tier/src/$SERVICE_2/src/") {
                         sh "docker build -t tkibnyusuf/$SERVICE_2:latest ."
                         sh "docker push tkibnyusuf/$SERVICE_2:latest"
                         sh "docker rmi tkibnyusuf/$SERVICE_2:latest"
