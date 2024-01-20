@@ -120,7 +120,7 @@ pipeline {
             }
         }
             }
-            stage($SERVICE_8) {
+             stage($SERVICE_8) {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -132,7 +132,7 @@ pipeline {
                 }
             }
         }
-            stage($SERVICE_9) {
+             stage($SERVICE_9) {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -144,7 +144,7 @@ pipeline {
                 }
             }
         }
-            stage($SERVICE_10) {
+             stage($SERVICE_10) {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
@@ -156,7 +156,7 @@ pipeline {
                 }
             }
         }
-            stage($SERVICE_11) {
+             stage($SERVICE_11) {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
