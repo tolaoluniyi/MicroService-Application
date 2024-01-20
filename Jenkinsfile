@@ -14,15 +14,17 @@ pipeline {
         SERVICE_10 = 'recommendationservice'
         SERVICE_11 = 'shippingservice'
       
-    }
+   }
+
     stages {
-           stage('SonarQube') {
+        stage('SonarQube') {
             steps {
                 withSonarQubeEnv('sonar') {
                     sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=10-Tier -Dsonar.ProjectName=10-Tier -Dsonar.java.binaries=.'''
                 }
             }
         }
+    
             stage($SERVICE_1) {
               steps {
                script {
@@ -35,6 +37,7 @@ pipeline {
                 }
             }
         }
+            }
             stage($SERVICE_2) {
               steps {
                script {
@@ -47,6 +50,8 @@ pipeline {
                 }
             }
         }
+
+            }
               
             stage($SERVICE_3) {
               steps {
@@ -59,7 +64,8 @@ pipeline {
                     }
                 }
             }
-        }             
+        } 
+            }            
             stage($SERVICE_4) {
               steps {
                script {
@@ -72,6 +78,8 @@ pipeline {
                 }
             }
         }
+
+            }
             stage($SERVICE_5) {
               steps {
                script {
@@ -84,6 +92,7 @@ pipeline {
                 }
             }
         }
+            }
               
             stage($SERVICE_6) {
               steps {
@@ -97,6 +106,7 @@ pipeline {
                 }
             }
         }
+            }
             stage($SERVICE_7) {
               steps {
                script {
@@ -109,6 +119,7 @@ pipeline {
                 }
             }
         }
+            }
             stage($SERVICE_8) {
               steps {
                script {
@@ -121,6 +132,8 @@ pipeline {
                 }
             }
         }
+
+            }
             stage($SERVICE_9) {
               steps {
                script {
@@ -157,17 +170,8 @@ pipeline {
                 }
             }
         }                
-        // stage('K8-Deploy') {
-        //     steps {
-        //         withKubeConfig(caCertificate: '', clusterName: 'my-eks2', contextName: '',
-        //                 credentialsId: 'k8-token', namespace: 'webapps', restrictKubeConfigAccess: false,
-        //                 serverUrl: 'https://EBCE08CF45C3AA5A574E126370E5D4FC.gr7.ap-south-1.eks.amazonaws.com') {
-        //             sh 'kubectl apply -f deployment-service.yml'
-        //             sh 'kubectl get pods'
-        //             sh 'kubectl get svc'
-        //         }
-        //     }
-        // }
     }
-}
-}
+   }
+   }
+    }
+  }
