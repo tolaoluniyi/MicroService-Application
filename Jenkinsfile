@@ -12,17 +12,17 @@ pipeline {
             }
         }
 
-        buildAndPush = { serviceName ->
-            script {
-                withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/${serviceName}") {
-                        sh "docker build -t tkibnyusuf/${serviceName}:latest ."
-                        sh "docker push tkibnyusuf/${serviceName}:latest"
-                        sh "docker rmi tkibnyusuf/${serviceName}:latest"
-                    }
-                }
-            }
-        }
+      //  def buildAndPush = { serviceName ->
+      //       script {
+      //           withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
+      //               dir("/var/lib/jenkins/workspace/10-Tier/src/${serviceName}") {
+      //                   sh "docker build -t tkibnyusuf/${serviceName}:latest ."
+      //                   sh "docker push tkibnyusuf/${serviceName}:latest"
+      //                   sh "docker rmi tkibnyusuf/${serviceName}:latest"
+      //               }
+      //           }
+      //       }
+      //   }
 
         stage('adservice') { buildAndPush('adservice') }
         stage('cartservice') { buildAndPush('cartservice/src/') }
