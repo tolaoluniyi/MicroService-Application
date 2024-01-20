@@ -19,7 +19,7 @@ pipeline {
             stage('SonarQube') {
              steps {
                 withSonarQubeEnv('sonar') {
-                    sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=10-Tier -Dsonar.ProjectName=10-Tier -Dsonar.java.binaries=.'''
+                    sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=project1 -Dsonar.ProjectName=project1 -Dsonar.java.binaries=.'''
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir('/var/lib/jenkins/workspace/10-Tier/src/adservice/') {
+                    dir('/var/lib/jenkins/workspace/project1/src/${SERVICE_1}/') {
                         sh "docker build -t tkibnyusuf/adservice:latest ."
                         sh "docker push tkibnyusuf/adservice:latest"
                         sh "docker rmi tkibnyusuf/adservice:latest"
@@ -40,7 +40,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/cartservice/src/") {
+                    dir("/var/lib/jenkins/workspace/project1/src/cartservice/src/") {
                         sh "docker build -t tkibnyusuf/cartservice:latest ."
                         sh "docker push tkibnyusuf/cartservice:latest"
                         sh "docker rmi tkibnyusuf/cartservice:latest"
@@ -53,7 +53,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/checkoutservice/") {
+                    dir("/var/lib/jenkins/workspace/project1/src/checkoutservice/") {
                         sh "docker build -t tkibnyusuf/checkoutservice:latest ."
                         sh "docker push tkibnyusuf/checkoutservice:latest"
                         sh "docker rmi tkibnyusuf/checkoutservice:latest"
@@ -66,7 +66,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/currencyservice/") {
+                    dir("/var/lib/jenkins/workspace/project1/src/currencyservice/") {
                         sh "docker build -t tkibnyusuf/currencyservice:latest ."
                         sh "docker push tkibnyusuf/currencyservice:latest"
                         sh "docker rmi tkibnyusuf/currencyservice:latest"
@@ -80,7 +80,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/emailservice/") {
+                    dir("/var/lib/jenkins/workspace/project1/src/emailservice/") {
                         sh "docker build -t tkibnyusuf/emailservice:latest ."
                         sh "docker push tkibnyusuf/emailservice:latest"
                         sh "docker rmi tkibnyusuf/emailservice:latest"
@@ -93,7 +93,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/frontend/") {
+                    dir("/var/lib/jenkins/workspace/project1/src/frontend/") {
                         sh "docker build -t tkibnyusuf/frontend:latest ."
                         sh "docker push tkibnyusuf/frontend:latest"
                         sh "docker rmi tkibnyusuf/frontend:latest"
@@ -106,7 +106,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/loadgenerator/") {
+                    dir("/var/lib/jenkins/workspace/project1/src/loadgenerator/") {
                         sh "docker build -t tkibnyusuf/loadgenerator:latest ."
                         sh "docker push tkibnyusuf/loadgenerator:latest"
                         sh "docker rmi tkibnyusuf/loadgenerator:latest"
@@ -119,7 +119,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/paymentservice/") {
+                    dir("/var/lib/jenkins/workspace/project1/src/paymentservice/") {
                         sh "docker build -t tkibnyusuf/paymentservice:latest ."
                         sh "docker push tkibnyusuf/paymentservice:latest"
                         sh "docker rmi tkibnyusuf/paymentservice:latest"
@@ -132,7 +132,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/productcatalogservice/") {
+                    dir("/var/lib/jenkins/workspace/project1/src/productcatalogservice/") {
                         sh "docker build -t tkibnyusuf/productcatalogservice:latest ."
                         sh "docker push tkibnyusuf/productcatalogservice:latest"
                         sh "docker rmi tkibnyusuf/productcatalogservice:latest"
@@ -145,7 +145,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/recommendationservice/") {
+                    dir("/var/lib/jenkins/workspace/project1/src/recommendationservice/") {
                         sh "docker build -t tkibnyusuf/recommendationservice:latest ."
                         sh "docker push tkibnyusuf/recommendationservice:latest"
                         sh "docker rmi tkibnyusuf/recommendationservice:latest"
@@ -158,7 +158,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/10-Tier/src/shippingservice/") {
+                    dir("/var/lib/jenkins/workspace/project1/src/shippingservice/") {
                         sh "docker build -t tkibnyusuf/shippingservice:latest ."
                         sh "docker push tkibnyusuf/shippingservice:latest"
                         sh "docker rmi tkibnyusuf/shippingservice:latest"
