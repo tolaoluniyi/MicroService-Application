@@ -24,7 +24,6 @@ pipeline {
                 }
             }
         }
-    
             stage($SERVICE_1) {
               steps {
                script {
@@ -52,7 +51,6 @@ pipeline {
         }
 
             }
-              
             stage($SERVICE_3) {
               steps {
                script {
@@ -64,8 +62,8 @@ pipeline {
                     }
                 }
             }
-        } 
-            }            
+        }
+            }
             stage($SERVICE_4) {
               steps {
                script {
@@ -93,7 +91,6 @@ pipeline {
             }
         }
             }
-              
             stage($SERVICE_6) {
               steps {
                script {
@@ -167,10 +164,10 @@ pipeline {
                     }
                 }
             }
-        }                
+        }
     }
    }
    }
     }
-  }
+    }
 }
