@@ -24,28 +24,28 @@ pipeline {
       //       }
       //   }
 
-        stage('adservice') { buildAndPush('adservice') }
-        stage('cartservice') { buildAndPush('cartservice/src/') }
-        stage('checkoutservice') { buildAndPush('checkoutservice') }
-        stage('currencyservice') { buildAndPush('currencyservice') }
-        stage('emailservice') { buildAndPush('emailservice') }
-        stage('frontend') { buildAndPush('frontend') }
-        stage('loadgenerator') { buildAndPush('loadgenerator') }
-        stage('paymentservice') { buildAndPush('paymentservice') }
-        stage('productcatalogservice') { buildAndPush('productcatalogservice') }
-        stage('recommendationservice') { buildAndPush('recommendationservice') }
-        stage('shippingservice') { buildAndPush('shippingservice') }
+        // stage('adservice') { buildAndPush('adservice') }
+        // stage('cartservice') { buildAndPush('cartservice/src/') }
+        // stage('checkoutservice') { buildAndPush('checkoutservice') }
+        // stage('currencyservice') { buildAndPush('currencyservice') }
+        // stage('emailservice') { buildAndPush('emailservice') }
+        // stage('frontend') { buildAndPush('frontend') }
+        // stage('loadgenerator') { buildAndPush('loadgenerator') }
+        // stage('paymentservice') { buildAndPush('paymentservice') }
+        // stage('productcatalogservice') { buildAndPush('productcatalogservice') }
+        // stage('recommendationservice') { buildAndPush('recommendationservice') }
+        // stage('shippingservice') { buildAndPush('shippingservice') }
 
-        stage('K8-Deploy') {
-            steps {
-                withKubeConfig(caCertificate: '', clusterName: 'my-eks2', contextName: '',
-                        credentialsId: 'k8-token', namespace: 'webapps', restrictKubeConfigAccess: false,
-                        serverUrl: 'https://EBCE08CF45C3AA5A574E126370E5D4FC.gr7.ap-south-1.eks.amazonaws.com') {
-                    sh 'kubectl apply -f deployment-service.yml'
-                    sh 'kubectl get pods'
-                    sh 'kubectl get svc'
-                }
-            }
-        }
+        // stage('K8-Deploy') {
+        //     steps {
+        //         withKubeConfig(caCertificate: '', clusterName: 'my-eks2', contextName: '',
+        //                 credentialsId: 'k8-token', namespace: 'webapps', restrictKubeConfigAccess: false,
+        //                 serverUrl: 'https://EBCE08CF45C3AA5A574E126370E5D4FC.gr7.ap-south-1.eks.amazonaws.com') {
+        //             sh 'kubectl apply -f deployment-service.yml'
+        //             sh 'kubectl get pods'
+        //             sh 'kubectl get svc'
+        //         }
+        //     }
+        // }
     }
 }
