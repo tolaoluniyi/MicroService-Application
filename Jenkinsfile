@@ -27,7 +27,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-                    dir('/var/lib/jenkins/workspace/project1/src/${SERVICE_1}/') {
+                    dir('/var/lib/jenkins/workspace/project1/src/adservice/') {
                         sh "docker build -t tkibnyusuf/adservice:latest ."
                         sh "docker push tkibnyusuf/adservice:latest"
                         sh "docker rmi tkibnyusuf/adservice:latest"
