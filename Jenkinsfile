@@ -17,8 +17,8 @@ pipeline {
    }
 
     stages {
-        stage('SonarQube') {
-            steps {
+            stage('SonarQube') {
+             steps {
                 withSonarQubeEnv('sonar') {
                     sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=10-Tier -Dsonar.ProjectName=10-Tier -Dsonar.java.binaries=.'''
                 }
