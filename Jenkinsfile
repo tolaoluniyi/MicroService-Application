@@ -13,7 +13,6 @@ pipeline {
         SERVICE_9 = 'productcatalogservice'
         SERVICE_10 = 'recommendationservice'
         SERVICE_11 = 'shippingservice'
-      
    }
 
     stages {
@@ -116,7 +115,6 @@ pipeline {
                 }
             }
         }
-            }
              stage($SERVICE_8) {
               steps {
                script {
@@ -168,6 +166,7 @@ pipeline {
     }
    }
    }
-    }
-    }
+  }
+}
+  }
 }
