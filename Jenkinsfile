@@ -167,5 +167,17 @@ pipeline {
             }
         }
     }
+
+              stage('K8-Deploy') {
+            steps {
+                withKubeConfig(caCertificate: '', clusterName: 'myAppp-eks-cluster', contextName: '', credentialsId: 'k8s-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://75CD60CD64BEAE9AB3CB93894C8FA247.gr7.us-east-1.eks.amazonaws.com') {
+                    sh 'kubectl apply -f deployment-service.yml'
+                    sh 'kubectl get pods'
+                    sh 'kubectl get svc'
+
+                }
+                }
+            }
+        }
    }
    }
