@@ -49,33 +49,33 @@ pipeline {
             }
         }
        }
-   //          stage($SERVICE_3) {
-   //            steps {
-   //             script {
-   //               withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-   //                  dir("/var/lib/jenkins/workspace/10-Tier/src/$SERVICE_3/") {
-   //                      sh "docker build -t tkibnyusuf/$SERVICE_3:latest ."
-   //                      sh "docker push tkibnyusuf/$SERVICE_3:latest"
-   //                      sh "docker rmi tkibnyusuf/$SERVICE_3:latest"
-   //                  }
-   //              }
-   //          }
-   //      }
-   //          }
-   //          stage($SERVICE_4) {
-   //            steps {
-   //             script {
-   //               withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
-   //                  dir("/var/lib/jenkins/workspace/10-Tier/src/$SERVICE_4/") {
-   //                      sh "docker build -t tkibnyusuf/$SERVICE_4:latest ."
-   //                      sh "docker push tkibnyusuf/$SERVICE_4:latest"
-   //                      sh "docker rmi tkibnyusuf/$SERVICE_4:latest"
-   //                  }
-   //              }
-   //          }
-   //      }
+            stage($SERVICE_3) {
+              steps {
+               script {
+                 withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
+                    dir("/var/lib/jenkins/workspace/10-Tier/src/$SERVICE_3/") {
+                        sh "docker build -t tkibnyusuf/$SERVICE_3:latest ."
+                        sh "docker push tkibnyusuf/$SERVICE_3:latest"
+                        sh "docker rmi tkibnyusuf/$SERVICE_3:latest"
+                    }
+                }
+            }
+        }
+            }
+            stage($SERVICE_4) {
+              steps {
+               script {
+                 withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker') {
+                    dir("/var/lib/jenkins/workspace/10-Tier/src/$SERVICE_4/") {
+                        sh "docker build -t tkibnyusuf/$SERVICE_4:latest ."
+                        sh "docker push tkibnyusuf/$SERVICE_4:latest"
+                        sh "docker rmi tkibnyusuf/$SERVICE_4:latest"
+                    }
+                }
+            }
+        }
 
-   //          }
+            }
    //          stage($SERVICE_5) {
    //            steps {
    //             script {
