@@ -47,14 +47,6 @@ pipeline {
             }
         }
        }
-
-              stage('Clean Docker Resources') {
-               steps {
-                script {
-                    sh 'docker system prune -a -f --volumes'
-                }
-            }
-        }
             stage('checkoutservice') {
               steps {
                script {
