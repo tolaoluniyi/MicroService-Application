@@ -28,7 +28,7 @@ pipeline {
             }
 
               stage('Clean Docker Resources') {
-            steps {
+               steps {
                 script {
                     sh 'docker system prune -a -f --volumes'
                 }
@@ -49,7 +49,7 @@ pipeline {
        }
 
               stage('Clean Docker Resources') {
-            steps {
+               steps {
                 script {
                     sh 'docker system prune -a -f --volumes'
                 }
