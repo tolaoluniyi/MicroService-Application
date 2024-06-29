@@ -21,19 +21,12 @@ pipeline {
                         sh "docker build -t tkibnyusuf/adservice:latest ."
                         sh "docker push tkibnyusuf/adservice:latest"
                         sh "docker rmi tkibnyusuf/adservice:latest"
+                        sh 'docker system prune -a -f --volumes'
                     }
                 }
             }
         }
             }
-
-              stage('Clean Docker Resources') {
-               steps {
-                script {
-                    sh 'docker system prune -a -f --volumes'
-                }
-            }
-        }
             stage('cartservice') {
               steps {
                script {
@@ -42,6 +35,7 @@ pipeline {
                         sh "docker build -t tkibnyusuf/cartservice:latest ."
                         sh "docker push tkibnyusuf/cartservice:latest"
                         sh "docker rmi tkibnyusuf/cartservice:latest"
+                        sh 'docker system prune -a -f --volumes'
                     }
                 }
             }
@@ -55,6 +49,7 @@ pipeline {
                         sh "docker build -t tkibnyusuf/checkoutservice:latest ."
                         sh "docker push tkibnyusuf/checkoutservice:latest"
                         sh "docker rmi tkibnyusuf/checkoutservice:latest"
+                        sh 'docker system prune -a -f --volumes'
                     }
                 }
             }
@@ -68,6 +63,7 @@ pipeline {
                         sh "docker build -t tkibnyusuf/currencyservice:latest ."
                         sh "docker push tkibnyusuf/currencyservice:latest"
                         sh "docker rmi tkibnyusuf/currencyservice:latest"
+                        sh 'docker system prune -a -f --volumes'
                     }
                 }
             }
@@ -82,6 +78,7 @@ pipeline {
                         sh "docker build -t tkibnyusuf/emailservice:latest ."
                         sh "docker push tkibnyusuf/emailservice:latest"
                         sh "docker rmi tkibnyusuf/emailservice:latest"
+                        sh 'docker system prune -a -f --volumes'
                     }
                 }
             }
@@ -95,6 +92,7 @@ pipeline {
                         sh "docker build -t tkibnyusuf/frontend:latest ."
                         sh "docker push tkibnyusuf/frontend:latest"
                         sh "docker rmi tkibnyusuf/frontend:latest"
+                        sh 'docker system prune -a -f --volumes'
                     }
                 }
             }
@@ -108,6 +106,7 @@ pipeline {
                         sh "docker build -t tkibnyusuf/loadgenerator:latest ."
                         sh "docker push tkibnyusuf/loadgenerator:latest"
                         sh "docker rmi tkibnyusuf/loadgenerator:latest"
+                        sh 'docker system prune -a -f --volumes'
                     }
                 }
             }
@@ -121,6 +120,7 @@ pipeline {
                         sh "docker build -t tkibnyusuf/paymentservice:latest ."
                         sh "docker push tkibnyusuf/paymentservice:latest"
                         sh "docker rmi tkibnyusuf/paymentservice:latest"
+                        sh 'docker system prune -a -f --volumes'
                     }
                 }
             }
@@ -134,6 +134,7 @@ pipeline {
                         sh "docker build -t tkibnyusuf/productcatalogservice:latest ."
                         sh "docker push tkibnyusuf/productcatalogservice:latest"
                         sh "docker rmi tkibnyusuf/productcatalogservice:latest"
+                        sh 'docker system prune -a -f --volumes'
                     }
                 }
             }
@@ -147,6 +148,7 @@ pipeline {
                         sh "docker build -t tkibnyusuf/recommendationservice:latest ."
                         sh "docker push tkibnyusuf/recommendationservice:latest"
                         sh "docker rmi tkibnyusuf/recommendationservice:latest"
+                        sh 'docker system prune -a -f --volumes'
                     }
                 }
             }
@@ -160,6 +162,7 @@ pipeline {
                         sh "docker build -t tkibnyusuf/shippingservice:latest ."
                         sh "docker push tkibnyusuf/shippingservice:latest"
                         sh "docker rmi tkibnyusuf/shippingservice:latest"
+                        sh 'docker system prune -a -f --volumes'
                     }
                 }
             }
