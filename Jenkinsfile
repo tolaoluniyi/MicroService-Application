@@ -171,7 +171,7 @@ pipeline {
 
               stage('EKS-Deployment') {
             steps {
-                withKubeConfig(caCertificate: '', clusterName: ' myAppp-eks-cluster', contextName: '', credentialsId: 'k8s', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://A50566454B6F686256D7FFCCFA22E82B.gr7.us-east-1.eks.amazonaws.com') {
+                withKubeConfig(caCertificate: '', clusterName: 'myAppp-eks-cluster', contextName: '', credentialsId: 'k8s', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://C1DA408472999D5E2E39B9425378E156.gr7.us-east-1.eks.amazonaws.com') {
                     sh 'kubectl apply -f deployment-service.yaml'
                     sh 'kubectl get pods'
                     sh 'kubectl get svc'
